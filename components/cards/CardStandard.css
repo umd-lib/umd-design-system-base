@@ -1,0 +1,42 @@
+.card--image img {
+  aspect-ratio: 5/4;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card--content {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card--details {
+  margin-bottom: auto;
+}
+
+.card--title,
+a {
+  width: fit-content;
+}
+
+.card--overlay {
+  min-height: 334px;
+
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card--overlay img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .card--overlay {
+    min-height: 456px;
+  }
+}

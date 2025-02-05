@@ -1,0 +1,127 @@
+import {
+  Meta,
+  Canvas,
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  Controls,
+  Stories,
+  ArgTypes,
+  Source,
+} from "@storybook/blocks";
+
+import * as CardStandardStories from "./CardStandard.stories";
+
+<Meta of={CardStandardStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+### Note
+
+The main difference between standard and overlay cards is whether they have images or not. Here using the CSS to hide the image in overlay card to reduce the difference in twig, but it might have better solution when implementing it.
+
+### Text Fields
+
+<table>
+  <tr>
+    <td>Field</td>
+    <td>Requirement</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>Eyebrow</td>
+    <td>Optional</td>
+    <td>A short description or category.</td>
+  </tr>
+  <tr>
+    <td>Title</td>
+    <td>Required</td>
+    <td>The title of the card.</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Optional</td>
+    <td>A short description of the card.</td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td>Optional</td>
+    <td>The date of the card.</td>
+  </tr>
+  <tr>
+    <td>CTA</td>
+    <td>Optional</td>
+    <td>The text for the call to action button.</td>
+  </tr>
+</table>
+
+- **Eyebrow**: [Optional] A short description or category.
+- **Title**: [Required] The title of the card.
+- **Description**: [Required] A short description of the card.
+- **Date**: [Optional] The date of the card.
+- **CTA Text**: [Optional] The text for the call to action button.
+
+### Twig
+
+#### Standard Card
+
+```twig
+{% set classes = [
+  'c-bg-primary',
+  'c-content-primary',
+  'card--standard',
+] %}
+
+<div{{ attributes.addClass(classes) }} role="contentinfo">
+  {% if image %}
+    <div class="card--image">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  <div class="card--content s-box-small-v s-box-small-h">
+    <div class="card--title">
+      {% if eyebrow %}
+        <div class="card--eyebrow t-eyebrow s-stack-small">
+          <p>{{ eyebrow }}</p>
+        </div>
+      {% endif %}
+
+      {% if title %}
+        <h3 class="card--headline t-title-medium c-underline-secondary ani-underline s-stack-default">
+          <a href="{{ url }}">
+            <span class="sr-only">{{ title }}</span>
+            <span aria-hidden="true">{{ title }}</span>
+          </a>
+        </h3>
+      {% endif %}
+    </div>
+
+    <div class="card--details">
+      {% if description %}
+        <div class="card--text t-body-small c-content-secondary s-stack-default">
+          <p>{{ description }}</p>
+        </div>
+      {% endif %}
+
+      {% if date %}
+        <div class="card--date t-label c-content-tertiary s-stack-large">
+          <time datetime="{{ date|date('Y-m-d') }}">{{ date|date('F j, Y') }}</time>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if cta_text %}
+      <a href="{{ url }}" class="t-body-small t-interactive-sub button--secondary c-content-primary c-underline-primary ani-underline">
+        <div class="i-chevron"></div>
+        {{ cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+```

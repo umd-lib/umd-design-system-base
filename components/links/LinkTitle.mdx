@@ -1,0 +1,44 @@
+import {
+  Meta,
+  Canvas,
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  Controls,
+  Stories,
+  ArgTypes,
+  Source,
+} from "@storybook/blocks";
+
+import * as LinkTitleStories from "./LinkTitle.stories";
+
+<Meta of={LinkTitleStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+### Note
+
+Currently, only 3 types of the links are included in the design system, which are:
+
+- Titlte
+- Body
+- Navigation
+
+This page showcases the **Title** link, which is used for titles with link.
+
+### Features
+
+The differences between the three types of links are mainly stylistic, such as color, text decoration, and animation. The typography is interchangeable within each type; for example, a Title link can be used with any title typography.
+
+### Twig
+
+#### Title Link
+
+```twig
+<a href={{ url }} class="link--title c-content-primary c-underline-secondary ani-underline">{{ text }}</a>
+```
