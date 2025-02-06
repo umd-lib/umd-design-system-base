@@ -16,27 +16,3 @@
 .card--details {
   margin-bottom: auto;
 }
-
-.card--title,
-a {
-  width: fit-content;
-}
-
-.card--overlay {
-  min-height: 334px;
-
-  width: fit-content;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.card--overlay img {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .card--overlay {
-    min-height: 456px;
-  }
-}

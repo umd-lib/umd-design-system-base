@@ -6,7 +6,7 @@ const cn = (...classes) => {
 };
 
 const BASE_BUTTON_CLASSES =
-  "button--secondary t-body-small t-interactive-sub c-content-primary c-underline-primary ani-underline";
+  "button--secondary t-body-small t-interactive-sub c-content-primary c-underline-primary ani-underline l-flex-row";
 
 const ButtonSecondary = forwardRef(({ children, className, ...props }, ref) => {
   const buttonClasses = cn(BASE_BUTTON_CLASSES, className);

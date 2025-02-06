@@ -11,9 +11,9 @@ import {
   Source,
 } from "@storybook/blocks";
 
-import * as CardStandardStories from "./CardStandard.stories";
+import * as CardOverlayStories from "./CardOverlay.stories";
 
-<Meta of={CardStandardStories} />
+<Meta of={CardOverlayStories} />
 
 <Title />
 <Subtitle />
@@ -25,7 +25,7 @@ import * as CardStandardStories from "./CardStandard.stories";
 
 Standard cards and overlay cards differ primarily in image handling. The standard card should always include an image, while the overlay card should not. To maintain this consistancy, those will be implemented as separate components.
 
-### Field Specifications
+### Text Fields
 
 <table>
   <tr>
@@ -33,12 +33,6 @@ Standard cards and overlay cards differ primarily in image handling. The standar
     <td>Requirement</td>
     <td>Description</td>
     <td>Note</td>
-  </tr>
-  <tr>
-    <td>Image</td>
-    <td>Required</td>
-    <td>Content image</td>
-    <td>5:4 aspect ratio</td>
   </tr>
   <tr>
     <td>Eyebrow</td>
@@ -88,19 +82,15 @@ Standard cards and overlay cards differ primarily in image handling. The standar
 
 - Button - Secondary
 
-### Twig Template
+### Twig
+
+#### Overlay Card
 
 If possible, nested components(secondary button for example) should be used to build the card. This allows for easier maintenance and updates.
 
 ```twig
-{# Card Component #}
-<div role="contentinfo" class="card--standard c-bg-primary c-content-primary">
- {% if image %}
-   <div class="card--image">
-     <img alt="{{ image.alt }}" src="{{ image.url }}">
-   </div>
- {% endif %}
-
+{# Card Overlay Component #}
+<div role="contentinfo" class="card--overlay c-bg-secondary c-content-primary">
  <div class="card--content s-box-small-v s-box-small-h">
    <div class="card--title">
      {% if eyebrow %}

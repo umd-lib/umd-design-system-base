@@ -1,4 +1,10 @@
 .button--primary {
   display: inline-block;
   padding: 0.75rem 2rem;
+  text-decoration: none;
+}
+
+.button--primary:hover,
+.button--primary:focus {
+  color: var(--white);
 }

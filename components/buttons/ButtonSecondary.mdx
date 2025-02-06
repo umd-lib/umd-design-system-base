@@ -21,7 +21,7 @@ import * as ButtonSecondaryStories from "./ButtonSecondary.stories";
 <Primary />
 <Controls />
 
-### Note
+### Implementation Note
 
 Currently, the disabled status won’t be included in the UMD Libraries Design System.
 
@@ -29,20 +29,35 @@ Currently, the disabled status won’t be included in the UMD Libraries Design S
 
 There are only 2 types of button will be used in the design system, which are:
 
-- Primary
-- Secondary
+- Primary - main call-to-action(hero section etc)
+- Secondary - components level action(link to articles etc))
 
-The primary button serves as the main action button, while the secondary button is used for "link to more" functions.
+Both variants function as styled links rather than traditional buttons. Disabled states are not supported.
+
+### Text Fields
+
+<table>
+  <tr>
+    <th>Variant</th>
+    <th>Maximum Characters</th>
+  </tr>
+  <tr>
+    <td>Primary Button</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>Secondary Button</td>
+    <td>50</td>
+  </tr>
+</table>
 
 ### Twig
 
 #### Secondary Button
 
 ```twig
-<a class="t-body-small t-interactive-sub button--secondary c-content-primary c-underline-primary ani-underline">
+<a href={{ url }} class="t-body-small t-interactive-sub button--secondary c-content-primary c-underline-primary ani-underline">
   <div class="i-chevron"></div>
   {{ text }}
 </a>
 ```
-
-<Stories />

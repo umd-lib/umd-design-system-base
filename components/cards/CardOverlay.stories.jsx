@@ -1,8 +1,8 @@
-import CardStandard from "./CardStandard";
+import CardOverlay from "./CardOverlay";
 
 export default {
-  title: "Component/Cards/Standard",
-  component: CardStandard,
+  title: "Component/Cards/Overlay",
+  component: CardOverlay,
   parameters: {
     layout: "centered",
     viewport: {
@@ -39,31 +39,30 @@ export default {
     },
   },
   argTypes: {
-    eyebrow: {
-      control: "text",
-      description:
-        "Optional category text displayed above the title (max 30 chars)",
-    },
     title: {
       control: "text",
-      description: "Main card heading (required, max 100 chars)",
+      description: "The title in the card",
+    },
+    eyebrow: {
+      control: "text",
+      description: "The optional eyebrow above title",
     },
     description: {
       control: "text",
-      description: "Body text providing additional details (max 400 chars)",
+      description: "The content inside the card",
     },
     date: {
       control: "text",
-      description: "Publication or event date displayed below description",
+      description: "The optional date information under card description",
     },
     link: {
       control: "text",
-      description: "URL for card navigation and CTA button",
+      description: "The optional link",
     },
   },
 };
 
-export const Standard = {
+export const Overlay = {
   args: {
     eyebrow: "Optional Tagline",
     title: "Digital Collections",

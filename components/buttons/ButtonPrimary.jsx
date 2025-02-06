@@ -12,9 +12,9 @@ const ButtonPrimary = forwardRef(({ children, className, ...props }, ref) => {
   const buttonClasses = cn(BASE_BUTTON_CLASSES, className);
 
   return (
-    <button ref={ref} className={buttonClasses} {...props}>
+    <a ref={ref} className={buttonClasses} {...props}>
       {children}
-    </button>
+    </a>
   );
 });
 

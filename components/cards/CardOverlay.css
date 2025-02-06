@@ -1,0 +1,12 @@
+.card--overlay {
+  min-height: 334px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .card--overlay {
+    min-height: 456px;
+  }
+}

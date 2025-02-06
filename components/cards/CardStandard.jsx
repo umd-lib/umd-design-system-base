@@ -2,28 +2,15 @@ import React, { forwardRef } from "react";
 import "./CardStandard.css";
 
 import ButtonSecondary from "../buttons/ButtonSecondary";
-import LinkTitle from "../links/LinkTitle";
 
 const cn = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
 
-const BASE_CARD_CLASSES = "card-standard";
+const BASE_CARD_CLASSES = "card--standard c-bg-primary c-content-primary";
 
 const CardStandard = forwardRef(
-  (
-    {
-      title,
-      eyebrow,
-      description,
-      date,
-      link,
-      variant = "standard",
-      className,
-      ...props
-    },
-    ref
-  ) => {
+  ({ title, eyebrow, description, date, link, className, ...props }, ref) => {
     const cardClasses = cn(BASE_CARD_CLASSES, className);
 
     return (
@@ -37,12 +24,8 @@ const CardStandard = forwardRef(
               <p>{eyebrow}</p>
             </div>
 
-            <h3 className="card--headline s-stack-default">
-              <LinkTitle>{title}</LinkTitle>
-              {/* <Link variant="title">{title}</Link>
-              <a class="link--title c-content-primary c-underline-secondary ani-underline t-title-medium">
-                {title}
-              </a> */}
+            <h3 className="card--headline s-stack-default t-title-medium">
+              <a>{title}</a>
             </h3>
           </div>
           <div className="card--details">
