@@ -1,0 +1,94 @@
+import {
+  Meta,
+  Canvas,
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  Controls,
+  Stories,
+  ArgTypes,
+  Source,
+} from "@storybook/blocks";
+
+import * as HeroMinimalStories from "./HeroMinimal.stories";
+
+<Meta of={HeroMinimalStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Primary />
+<Controls />
+
+### Implementation Note
+
+The Hero Minimal component is flexible and can be displayed with or without an image. The content width automatically adjusts depending on whether an image is present.
+
+### Field Specifications
+
+<table>
+  <tr>
+    <td>Field</td>
+    <td>Requirement</td>
+    <td>Description</td>
+    <td>Note</td>
+  </tr>
+  <tr>
+    <td>Image</td>
+    <td>Optional</td>
+    <td>Content image</td>
+    <td>16:9 aspect ratio</td>
+  </tr>
+  <tr>
+    <td>Eyebrow</td>
+    <td>Optional</td>
+    <td>Category or short description</td>
+    <td>30 characters max</td>
+  </tr>
+  <tr>
+    <td>Title</td>
+    <td>Required</td>
+    <td>Card title</td>
+    <td>100 characters max</td>
+  </tr>
+  <tr>
+    <td>Description</td>
+    <td>Optional</td>
+    <td>Body text providing additional details</td>
+    <td>400 characters max</td>
+  </tr>
+</table>
+
+### Nested Components
+
+- n/a
+
+### Twig Template
+
+```twig
+<div class="hero--minimal c-bg-primary c-content-primary">
+  {% if image %}
+  <div class="hero--image">
+    <img alt="{{ image.alt }}" src="{{ image.url }}">
+  </div>
+  {% endif %}
+  <div class="hero--container s-box-page-default-h s-box-page-default-v s-center">
+    <div class="hero--content s-box-large-h {% if not image %}text-only{% endif %}">
+     {% if eyebrow %}
+        <p class="hero--eyebrow c-content-secondary t-eyebrow s-stack-small">
+          {{ eyebrow }}
+        </p>
+      {% endif %}
+      <h1 class="hero--headline t-display s-stack-default">
+        {{ title }}
+      </h1>
+      {% if description %}
+        <p class="hero--description c-content-secondary t-body-medium">
+          {{ description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+```

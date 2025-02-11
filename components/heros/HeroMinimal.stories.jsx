@@ -1,10 +1,10 @@
-import CardOverlay from "./CardOverlay";
+import HeroMinimal from "./HeroMinimal";
 
 export default {
-  title: "Component/Cards/Overlay",
-  component: CardOverlay,
+  title: "Component/Heros/Minimal",
+  component: HeroMinimal,
   parameters: {
-    layout: "centered",
+    // layout: "centered",
     viewport: {
       viewports: {
         mobile: {
@@ -52,24 +52,19 @@ export default {
       control: "text",
       description: "Body text providing additional details (max 400 chars)",
     },
-    date: {
-      control: "text",
-      description: "Publication or event date displayed below description",
-    },
-    link: {
-      control: "text",
-      description: "URL for card navigation and CTA button",
+    variant: {
+      control: "select",
+      options: ["image", "noimage"],
+      description: "Variant of the card (default is 'image')",
     },
   },
 };
 
-export const Overlay = {
+export const Minimal = {
   args: {
-    eyebrow: "Optional Tagline",
-    title: "Digital Collections",
+    eyebrow: "We are here to help get what you need",
+    title: "Find, Borrow, Request",
     description:
-      "Access digitized material, including photographs, archives and manuscripts, film and audio, and more from our specialized collections.",
-    date: "September 31, 2023",
-    link: "Explore Digital Collections",
+      "How to locate, obtain, and use library materials - from our physical and online collections as well as those of other libraries.",
   },
 };

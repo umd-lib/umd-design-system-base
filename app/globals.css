@@ -166,6 +166,11 @@
   /* gap */
 }
 
+/* make sure the padding is calculated in the total width */
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: var(--dark-gray);
   background: var(--white);
@@ -468,26 +473,36 @@ body {
 }
 
 .s-box-small-v {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .s-box-small-h {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.s-box-large-v {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.s-box-large-h {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* stack/inline -> within element */
 .s-stack-small {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .s-stack-default {
-  margin-bottom: 1rem;
+  margin-bottom: 1dvh;
 }
 
 .s-stack-large {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .s-inline-small {
@@ -514,6 +529,16 @@ body {
     padding-right: 1.5rem;
   }
 
+  .s-box-large-v {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .s-box-large-h {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .s-box-page-default-v {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -522,6 +547,18 @@ body {
   .s-box-page-default-h {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .s-stack-small {
+    margin-bottom: 0.5rem;
+  }
+
+  .s-stack-default {
+    margin-bottom: 1.5rem;
+  }
+
+  .s-stack-large {
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -547,6 +584,16 @@ body {
     padding-right: 1.5rem;
   }
 
+  .s-box-large-v {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .s-box-large-h {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .s-box-page-default-v {
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -555,6 +602,18 @@ body {
   .s-box-page-default-h {
     padding-left: 4rem;
     padding-right: 4rem;
+  }
+
+  .s-stack-small {
+    margin-bottom: 1rem;
+  }
+
+  .s-stack-default {
+    margin-bottom: 2rem;
+  }
+
+  .s-stack-large {
+    margin-bottom: 3rem;
   }
 }
 
@@ -574,10 +633,14 @@ h4,
 h5,
 h6 {
   color: var(--black);
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
 }
 
 p {
   color: var(--dark-gray);
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
 }
 
 a {
