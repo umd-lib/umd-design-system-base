@@ -21,6 +21,7 @@ footer ol {
 
 footer li {
   list-style: none;
+  line-height: 0rem;
 }
 
 .footer--content,
@@ -29,8 +30,20 @@ footer li {
   max-width: 1680px;
 }
 
+.footer--content {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer--header {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+}
+
+.footer--columns {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer--columns-main {
@@ -53,11 +66,20 @@ footer li {
 }
 
 .footer--sub-content {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
 .footer--sub ul {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+}
+
+.social-media-list {
+  display: flex;
+  flex-direction: row;
 }
 
 ul.social-media-list li {
