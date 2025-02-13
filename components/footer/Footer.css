@@ -1,0 +1,142 @@
+/* need to update the width */
+footer {
+  width: 100%;
+}
+
+footer a {
+  color: var(--light-gray);
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--light-gray);
+}
+
+footer ul,
+footer ol {
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  list-style: none;
+}
+
+.footer--content,
+.footer--sub-content {
+  /* 1440+120*2 */
+  max-width: 1680px;
+}
+
+.footer--header {
+  gap: 2rem;
+}
+
+.footer--columns-main {
+  flex-grow: 1;
+}
+
+.footer--columns-main nav,
+.footer--columns-main > div {
+  break-inside: avoid;
+}
+
+.footer--columns-main ul {
+  border-left: 1px solid #454545;
+}
+
+.footer--columns-secondary-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer--sub-content {
+  gap: 1rem;
+}
+
+.footer--sub ul {
+  gap: 1rem;
+}
+
+ul.social-media-list li {
+  margin-bottom: 0rem;
+}
+
+.social-media-list-item {
+  display: flex;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* center social icon */
+.social-media-list-item img,
+.social-media-list-item svg {
+  margin: auto;
+}
+
+/* breakpoint */
+/* Tablet */
+@media (min-width: 768px) {
+  .footer--header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .footer--columns {
+    gap: 3rem;
+  }
+
+  .footer--columns-main {
+    flex-grow: 1;
+
+    column-width: 18rem;
+    column-gap: 4rem;
+  }
+
+  .footer--columns-secondary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .footer--sub-content {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .footer--sub ul {
+    flex-direction: row;
+  }
+
+  .footer--sub ul li:not(:first-child),
+  .footer--sub > div > div {
+    padding-left: 1rem;
+    border-left: 1px solid #454545;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .footer--columns {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0rem;
+  }
+
+  .footer--columns-main {
+    column-width: 16rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .footer--columns {
+    gap: 3rem;
+  }
+}

@@ -12,16 +12,30 @@ const HERO_VARIANTS = {
   noimage: "",
 };
 
+const HERO_THEME = {
+  light: "",
+  dark: "dark-theme",
+};
+
 const BASE_HERO_CLASSES = "hero--minimal c-bg-primary c-content-primary";
 
 const HeroMinimal = forwardRef(
   (
-    { title, eyebrow, description, className, variant = "image", ...props },
+    {
+      title,
+      eyebrow,
+      description,
+      className,
+      variant = "image",
+      theme = "light",
+      ...props
+    },
     ref
   ) => {
     const heroClasses = cn(
       BASE_HERO_CLASSES,
       HERO_VARIANTS[variant],
+      HERO_THEME[theme],
       className
     );
 

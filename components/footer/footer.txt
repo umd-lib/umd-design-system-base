@@ -1,0 +1,240 @@
+// footer.component.yml
+name: Footer
+status: stable
+libraryDependencies:
+  - core/drupal
+
+// footer.component.css
+/* Previous CSS remains the same */
+
+// footer.component.twig
+<footer role="contentinfo" class="c-bg-dark-primary c-content-dark-primary">
+  <div class="footer--content s-box-page-default-h s-box-default-v s-center">
+    {# header section #}
+    <div class="footer--header s-stack-large">
+      <div class="footer--logo">
+        {% if logo_path %}
+          <img
+            alt="{{ 'University Libraries'|t }}"
+            loading="lazy"
+            width="270"
+            height="81"
+            decoding="async"
+            src="{{ logo_path }}"
+          />
+        {% endif %}
+      </div>
+      <div class="footer--title c-content-dark-secondary">
+        <h2 class="t-title-small">{{ 'University Libraries'|t }}</h2>
+        <address class="t-body-medium">
+          <p>{{ address|default('McKeldin Library, 7649 Library Lane, College Park, MD 20742-7011') }}</p>
+          <a href="tel:{{ phone|default('+13014050800')|replace({'.': ''}) }}">{{ phone|default('301.405.0800') }}</a>
+        </address>
+      </div>
+    </div>
+
+    {# main footer content #}
+    <div class="footer--columns t-body-small">
+      <div class="footer--columns-main">
+        {# Integrated navigation sections #}
+        {% if nav_sections %}
+          {% for section in nav_sections %}
+            <nav aria-labelledby="{{ section.id }}-heading" class="s-stack-large">
+              <h3 id="{{ section.id }}-heading" class="t-title-small c-content-dark-secondary s-stack-default">
+                {{ section.title|t }}
+              </h3>
+              <ul class="s-box-default-h">
+                {% for link in section.links %}
+                  <li class="s-stack-default">
+                    <a href="{{ link.url }}" class="ani-underline c-underline-dark-primary">{{ link.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endfor %}
+        {% endif %}
+
+        {# Separate Stay Connected section #}
+        {% if social_media %}
+          <div aria-labelledby="stay-connected-heading" class="s-stack-large">
+            <h3 id="stay-connected-heading" class="t-title-small c-content-dark-secondary s-stack-default">
+              {{ 'Stay Connected'|t }}
+            </h3>
+            <ul class="social-media-list s-box-default-h">
+              {% for platform in social_media %}
+                <li class="s-stack-default s-inline-small">
+                  <a
+                    class="social-media-list-item c-bg-interactive-dark-primary ani-bg-interactive ani-icon-interactive"
+                    href="{{ platform.url }}"
+                    aria-label="{{ platform.name }}"
+                  >
+                    <span class="sr-only">{{ platform.name }}</span>
+                    {{ platform.icon }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="footer--columns-secondary">
+        {% if fearlessly_forward %}
+          <a
+            class="footer--columns-secondary-item s-stack-default"
+            href="{{ fearlessly_forward.url }}"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="{{ fearlessly_forward.label }}"
+          >
+            <img
+              alt="{{ fearlessly_forward.alt }}"
+              loading="lazy"
+              width="156"
+              height="67"
+              decoding="async"
+              src="{{ fearlessly_forward.logo }}"
+            />
+          </a>
+        {% endif %}
+
+        {% if rfdl %}
+          <div class="footer--columns-secondary-item">
+            <img
+              alt="{{ rfdl.alt }}"
+              loading="lazy"
+              width="37"
+              height="33"
+              decoding="async"
+              src="{{ rfdl.logo }}"
+            />
+            <p class="t-body-small c-content-dark-secondary">
+              {{ rfdl.text }}
+            </p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {# sub footer content #}
+  <div class="footer--sub c-bg-dark-secondary">
+    <div class="footer--sub-content t-label s-box-small-v s-box-page-default-h s-center">
+      {% if sub_footer_links %}
+        <ul>
+          {% for link in sub_footer_links %}
+            <li>
+              <a href="{{ link.url }}" class="ani-underline c-underline-dark-primary">{{ link.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <div>
+        <p>© {{ 'now'|date('Y') }} {{ copyright|default('UNIVERSITY OF MARYLAND')|upper }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+// footer.component.json
+{
+  "nav_sections": [
+    {
+      "id": "our-libraries",
+      "title": "Our Libraries",
+      "links": [
+        {
+          "name": "McKeldin Library (Main)",
+          "url": "/"
+        },
+        {
+          "name": "Architecture Library",
+          "url": "/"
+        },
+        {
+          "name": "Art Library",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": "library-info",
+      "title": "Library Information",
+      "links": [
+        {
+          "name": "Library Hours",
+          "url": "/"
+        },
+        {
+          "name": "Libraries' Directory",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": "get-involved",
+      "title": "Get Involved",
+      "links": [
+        {
+          "name": "Support the Libraries",
+          "url": "/"
+        },
+        {
+          "name": "Careers",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "id": "services-support",
+      "title": "Services & Support",
+      "links": [
+        {
+          "name": "Ask a Librarian",
+          "url": "/"
+        },
+        {
+          "name": "Share Feedback",
+          "url": "/"
+        }
+      ]
+    }
+  ],
+  "social_media": [
+    {
+      "name": "X (formerly Twitter)",
+      "url": "https://twitter.com/umdlibraries",
+      "icon": "x-icon-svg"
+    },
+    {
+      "name": "Facebook", 
+      "url": "https://facebook.com/umdlibraries",
+      "icon": "facebook-icon-svg"
+    }
+  ],
+  "fearlessly_forward": {
+    "url": "https://fearlesslyforward.umd.edu/",
+    "label": "Link to the Fearlessly Forward Brand website",
+    "alt": "University Libraries",
+    "logo": "./fearlessly-forward.svg"
+  },
+  "rfdl": {
+    "alt": "University Libraries",
+    "logo": "./rfdl.svg",
+    "text": "Regional Federal Depository Library"
+  },
+  "sub_footer_links": [
+    {
+      "name": "Give Now",
+      "url": "/"
+    },
+    {
+      "name": "Privacy Policy",
+      "url": "/"
+    },
+    {
+      "name": "Web Accessibility",
+      "url": "/"
+    }
+  ]
+}

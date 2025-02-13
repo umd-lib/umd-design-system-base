@@ -4,7 +4,7 @@ export default {
   title: "Component/Heros/Minimal",
   component: HeroMinimal,
   parameters: {
-    // layout: "centered",
+    layout: "fullscreen",
     viewport: {
       viewports: {
         mobile: {
@@ -56,6 +56,11 @@ export default {
       control: "select",
       options: ["image", "noimage"],
       description: "Variant of the card (default is 'image')",
+    },
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+      description: "Theme of the card (default is 'light')",
     },
   },
 };

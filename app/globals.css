@@ -166,6 +166,21 @@
   /* gap */
 }
 
+/* dark theme */
+.dark-theme {
+  --maryland-red: #ffd200;
+  --maryland-yellow: #e21833;
+  --white: #000000;
+  --black: #ffffff;
+
+  --lighest-gray: #242424;
+  --lighter-gray: #454545;
+  --light-gray: #757575;
+  --medium-gray: #e6e6e6;
+  --dark-gray: #f1f1f1;
+  --darker-gray: #fafafa;
+}
+
 /* make sure the padding is calculated in the total width */
 * {
   box-sizing: border-box;
@@ -175,6 +190,7 @@ body {
   color: var(--dark-gray);
   background: var(--white);
   font-family: Interstate, Helvetica, sans-serif;
+  margin: 0rem;
 }
 
 /* typography */
@@ -323,7 +339,7 @@ body {
 }
 
 .c-underline-dark-primary {
-  background-image: linear-gradient(var(--white), var(--white));
+  background-image: linear-gradient(var(--light-gray), var(--light-gray));
 }
 
 .c-bg-primary {
@@ -622,6 +638,11 @@ body {
   .s-box-page-default-h {
     padding-left: 7.5rem;
     padding-right: 7.5rem;
+  }
+
+  .s-box-page-default-v {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
   }
 }
 
