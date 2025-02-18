@@ -50,7 +50,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                 Our Libraries
               </p>
               <ul className="s-box-default-h">
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -58,7 +58,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     McKeldin Library (Main)
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -66,7 +66,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Architecture Library
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -74,7 +74,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Art Library
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -82,7 +82,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Hornbake Library
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -90,7 +90,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Michelle Smith Performing Arts Library
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -98,7 +98,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Priddy Library (Universities at Shady Grove)
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -106,7 +106,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Severn Library
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -128,7 +128,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                 Library Information
               </p>
               <ul className="s-box-default-h">
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -136,7 +136,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Library Hours
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -144,7 +144,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Libraries' Directory
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -166,7 +166,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                 Get Involved
               </p>
               <ul className="s-box-default-h">
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -174,7 +174,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Support the Libraries
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -196,7 +196,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                 Services & Support
               </p>
               <ul className="s-box-default-h">
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -204,7 +204,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Ask a Librarian
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -212,7 +212,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     Share Feedback
                   </a>
                 </li>
-                <li className="s-stack-default">
+                <li className="s-stack-small">
                   <a
                     href="/"
                     className="ani-underline c-underline-dark-primary"
@@ -234,7 +234,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                 Stay Connected
               </p>
               <ul className="social-media-list s-box-default-h l-flex-row">
-                <li className="s-stack-default s-inline-small">
+                <li className="s-stack-small s-inline-small">
                   <a
                     className="social-media-list-item c-bg-interactive-dark-primary ani-bg-interactive ani-icon-interactive"
                     href="https://twitter.com/umdlibraries"
@@ -257,7 +257,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     </svg>
                   </a>
                 </li>
-                <li className="s-stack-default s-inline-small">
+                <li className="s-stack-small s-inline-small">
                   <a
                     className="social-media-list-item c-bg-interactive-dark-primary ani-bg-interactive ani-icon-interactive"
                     href="https://facebook.com/umdlibraries"
@@ -281,7 +281,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     </svg>
                   </a>
                 </li>
-                <li className="s-stack-default s-inline-small">
+                <li className="s-stack-small s-inline-small">
                   <a
                     className="social-media-list-item c-bg-interactive-dark-primary ani-bg-interactive ani-icon-interactive"
                     href="https://instagram.com/umdlibraries"
@@ -305,7 +305,7 @@ const Footer = forwardRef(({ children, className, ...props }, ref) => {
                     </svg>
                   </a>
                 </li>
-                <li className="s-stack-default s-inline-small">
+                <li className="s-stack-small s-inline-small">
                   <a
                     className="social-media-list-item c-bg-interactive-dark-primary ani-bg-interactive ani-icon-interactive"
                     href="https://youtube.com/umdlibraries"

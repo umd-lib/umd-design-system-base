@@ -21,12 +21,12 @@ const CardOverlay = forwardRef(
               <p>{eyebrow}</p>
             </div>
 
-            <h3 className="card--headline s-stack-default t-title-medium">
+            <h3 className="card--headline s-stack-small t-title-medium">
               <a>{title}</a>
             </h3>
           </div>
           <div className="card--details">
-            <div className="card--text t-body-small c-content-secondary s-stack-default">
+            <div className="card--text t-body-small c-content-secondary s-stack-small">
               <p>{description}</p>
             </div>
 

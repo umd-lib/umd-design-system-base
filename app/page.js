@@ -1,9 +1,9 @@
-import Footer from "@/components/footer/Footer";
+import Navigation from "@/components/navigation/Navigation";
 
 export default function Home() {
   return (
     <div>
-      <Footer />
+      <Navigation />
     </div>
   );
 }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkbox Navigation</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+      }
+
+      /* Navigation Styles */
+      .nav {
+        --nav-height: 4rem;
+        --nav-bg: #333;
+        --nav-color: white;
+
+        position: fixed;
+        height: var(--nav-height);
+        width: 100%;
+        background: var(--nav-bg);
+        color: var(--nav-color);
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav__brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--nav-color);
+        text-decoration: none;
+      }
+
+      .nav__button {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: relative;
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      .nav__icon,
+      .nav__icon::before,
+      .nav__icon::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 3px;
+        background: var(--nav-color);
+        transition: all 0.3s ease;
+      }
+
+      .nav__icon {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .nav__icon::before {
+        top: -8px;
+        left: 0;
+      }
+
+      .nav__icon::after {
+        bottom: -8px;
+        left: 0;
+      }
+
+      .nav__toggle:checked ~ .nav__button .nav__icon {
+        background: transparent;
+      }
+
+      .nav__toggle:checked ~ .nav__button .nav__icon::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .nav__toggle:checked ~ .nav__button .nav__icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      .nav__list {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background: var(--nav-bg);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        list-style: none;
+        padding: 2rem;
+      }
+
+      .nav__toggle:checked ~ .nav__list {
+        transform: translateX(0);
+      }
+
+      .nav__link {
+        color: var(--nav-color);
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: block;
+        padding: 0.5rem 0;
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 768px) {
+        .nav__button {
+          display: none;
+        }
+
+        .nav__list {
+          position: static;
+          height: auto;
+          transform: none;
+          background: none;
+          padding: 0;
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav__link {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="#" class="nav__brand">Logo</a>
+
+      <input type="checkbox" class="nav__toggle" id="nav-toggle" hidden />
+      <label for="nav-toggle" class="nav__button">
+        <span class="nav__icon"></span>
+      </label>
+
+      <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">About</a></li>
+        <li><a href="#" class="nav__link">Services</a></li>
+        <li><a href="#" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main style="padding: 5rem 1rem">
+      <h1>Checkbox Navigation Example</h1>
+      <p>Resize window to see responsive behavior</p>
+    </main>
+  </body>
+</html>

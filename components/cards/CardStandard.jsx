@@ -18,18 +18,18 @@ const CardStandard = forwardRef(
         <div className="card--image">
           <img src="https://picsum.photos/1600/900" alt="Example Image" />
         </div>
-        <div className="card--content s-box-small-v s-box-small-h">
+        <div className="card--content s-box-small-v">
           <div className="card--title">
             <div className="card--eyebrow t-eyebrow s-stack-small">
               <p>{eyebrow}</p>
             </div>
 
-            <h3 className="card--headline s-stack-default t-title-medium">
+            <h3 className="card--headline s-stack-small t-title-medium">
               <a>{title}</a>
             </h3>
           </div>
           <div className="card--details">
-            <div className="card--text t-body-small c-content-secondary s-stack-default">
+            <div className="card--text t-body-small c-content-secondary s-stack-small">
               <p>{description}</p>
             </div>
 
