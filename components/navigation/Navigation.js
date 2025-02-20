@@ -8,27 +8,152 @@ const cn = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
 
-const BASE_NAVIGATION_CLASSES = "";
-
 const Navigation = forwardRef(({ children, className, ...props }, ref) => {
-  const navigationClasses = cn(BASE_NAVIGATION_CLASSES, className);
-
-  const [isPreviousMenu, setIsPreviousMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   const handleBackClick = () => {
-    setIsPreviousMenu(!isPreviousMenu);
+    setActiveSubmenu(null);
   };
+
+  const handleMenuClick = () => {
+    setIsOpen(!isOpen);
+    if (!isOpen) {
+      setActiveSubmenu(null);
+    }
+  };
+
+  const handleSubmenuClick = (menuId) => {
+    setActiveSubmenu(activeSubmenu === menuId ? null : menuId);
+  };
+
+  const mainMenuItems = [
+    {
+      id: "find-borrow",
+      title: "Find, Borrow, Request",
+      subItems: [
+        { title: "Find Materials", href: "/" },
+        { title: "Access Online Resources", href: "/" },
+        { title: "Borrow and Return", href: "/" },
+        { title: "Request Items for Pick Up or Delivery", href: "/" },
+        { title: "Request Digital Copies or Duplication", href: "/" },
+        { title: "Request Onsite Access to Special Collections", href: "/" },
+        { title: "Suggest a Title for Purchase", href: "/" },
+        { title: "Course Reserves", href: "/" },
+        { title: "Interlibrary Loan", href: "/" },
+      ],
+    },
+    {
+      id: "visit",
+      title: "Visit & Study",
+      subItems: [
+        { title: "Our Libraries", href: "/" },
+        { title: "Find a Space", href: "/" },
+        { title: "Technology", href: "/" },
+        { title: "Visit Special Collections", href: "/" },
+      ],
+    },
+    {
+      id: "research",
+      title: "Research & Learning",
+      subItems: [
+        { title: "Meet Your Subject Specialist", href: "/" },
+        { title: "Research Services", href: "/" },
+        { title: "Events & Workshops", href: "/" },
+        { title: "Teaching and Instruction", href: "/" },
+        { title: "Open Scholarship Services", href: "/" },
+        { title: "Data Services", href: "/" },
+      ],
+    },
+    {
+      id: "collecitons",
+      title: "Collections",
+      subItems: [
+        { title: "Collections Overview", href: "/" },
+        { title: "Digital Collections and Repositories", href: "/" },
+        { title: "Government Information", href: "/" },
+        { title: "Special Collections", href: "/" },
+        { title: "University Archives", href: "/" },
+      ],
+    },
+    {
+      id: "about",
+      title: "About",
+      subItems: [
+        { title: "Overviews", href: "/" },
+        { title: "Contact Us", href: "/" },
+        { title: "Our Organization", href: "/" },
+        { title: "Strategic Goals and Initiatives", href: "/" },
+        { title: "Collaborations and Innovations", href: "/" },
+        { title: "Inclusion, Diversity, Equity, and Accessibility", href: "/" },
+        { title: "Careers", href: "/" },
+        { title: "Awards", href: "/" },
+        { title: "Support the Libraries", href: "/" },
+        { title: "Policies and Safety", href: "/" },
+        { title: "News", href: "/" },
+        { title: "Events and Workshops", href: "/" },
+      ],
+    },
+  ];
+
+  const secMenuItems = [
+    {
+      id: "locations",
+      title: "Locations & Hours",
+      href: "/",
+      subItems: [
+        { title: "Main Library", href: "/" },
+        { title: "Science Library", href: "/l" },
+      ],
+    },
+    {
+      id: "system",
+      title: "System Status",
+      href: "/",
+      subItems: [
+        { title: "Main Library", href: "/" },
+        { title: "Science Library", href: "/" },
+      ],
+    },
+    {
+      id: "help",
+      title: "Get Help",
+      href: "/",
+      subItems: [
+        { title: "Main Library", href: "/" },
+        { title: "Science Library", href: "/" },
+      ],
+    },
+    {
+      id: "info",
+      title: "Info For",
+      href: "/",
+      subItems: [
+        { title: "Main Library", href: "/" },
+        { title: "Science Library", href: "/" },
+      ],
+    },
+    {
+      id: "account",
+      title: "My Accounts",
+      href: "/",
+      subItems: [
+        { title: "Main Library", href: "/" },
+        { title: "Science Library", href: "/" },
+      ],
+    },
+  ];
 
   return (
     <header
       role="contentinfo"
       ref={ref}
-      className={navigationClasses}
+      className={cn("navigation", className)}
       {...props}
     >
-      <div className="header--content s-box-page-default-h s-box-page-small-v s-center">
-        <div className="header--header">
-          <div className="header--logo">
+      <div className="navigation__content s-box-page-default-h s-box-page-small-v s-center">
+        <div className="navigation__header">
+          <div className="navigation__logo">
             <Image
               src="./logo.svg"
               alt="University Libraries"
@@ -37,113 +162,148 @@ const Navigation = forwardRef(({ children, className, ...props }, ref) => {
             />
           </div>
         </div>
-        <input
-          type="checkbox"
-          className="header--menu-toggle"
-          id="menu-toggle"
-          hidden
-        ></input>
-        <label htmlFor="menu-toggle" className="menu-toggle-container">
-          <div className="menu-toggle-icon"></div>
-        </label>
 
-        <div className="header--rows">
-          {/* main navigtaion menu */}
-          <div className="header--row-main">
-            <nav aria-labelledby="" className="">
-              <p className="sr-only">
-                Expand main navigation buttons to view related content groups
-                and associated links.
-              </p>
-              <ul className="header--menu-main">
-                <li className="header--menu-main-item">
-                  <a href="/" className="t-body-small t-interactive-sub">
-                    Find, Borrow, Request
-                  </a>
-                  <button
-                    onClick={handleBackClick}
-                    className="back-button"
-                    id="back-button"
-                  >
-                    <div className="i-chevron-down"></div>
-                  </button>
-                  <div
-                    className={`header--menu-main-dropdown-container menu-container ${
-                      isPreviousMenu ? "previous-menu" : ""
-                    }`}
-                    id="menu-container"
-                  >
-                    <ul className="header--menu-main-sub s-box-large-v s-box-large-h t-body-small">
-                      <li>
+        <button
+          className={`navigation__menu-button ${isOpen ? "is-active" : ""}`}
+          onClick={handleMenuClick}
+          aria-expanded={isOpen}
+          aria-controls="navigation"
+        >
+          <span className="navigation__menu-icon"></span>
+        </button>
+
+        <div className={`navigation__rows ${isOpen ? "is-open" : ""}`}>
+          {/* main navigation */}
+          <div className="navigation__row-main">
+            <nav aria-label="Main navigation" className="navigation__main-menu">
+              <ul className="navigation__menu-list">
+                {mainMenuItems.map((item) => (
+                  <li key={item.id} className="navigation__menu-item">
+                    <a href={`/${item.id}`} className="navigation__menu-link">
+                      {item.title}
+                    </a>
+                    <button
+                      onClick={() => handleSubmenuClick(item.id)}
+                      className="navigation__submenu-button"
+                      aria-expanded={activeSubmenu === item.id}
+                      aria-controls={`submenu-${item.id}`}
+                    >
+                      <span className="i-chevron-down"></span>
+                    </button>
+                    <div
+                      className={`navigation__submenu ${isOpen ? "is-open" : ""}
+                      ${activeSubmenu === item.id ? "is-active" : ""}`}
+                      id={`submenu-${item.id}`}
+                    >
+                      <div className="navigation__submenu-header">
                         <button
                           onClick={handleBackClick}
-                          className="back-button t-label"
-                          id="back-button"
+                          className="navigation__back-button"
                         >
-                          <div className="i-chevron-down"></div>
-                          Back
+                          <span className="i-chevron-down"></span>
+                          <p className="t-label ani-underline c-underline-secondary">
+                            Back
+                          </p>
                         </button>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          className="sub-menu-title t-interactive-sub ani-underline c-underline-primary"
-                        >
-                          Find, Borrow, Request
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="/"
-                          className="sub-menu-title ani-underline c-underline-primary"
-                        >
-                          Sub Menu Item 1
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+                      </div>
+                      <div className="navigation__submenu-content">
+                        <div className="navigation__submenu-title">
+                          <a href={`/${item.id}`}>{item.title}</a>
+                        </div>
+
+                        <ul className="navigation__submenu-list">
+                          {item.subItems.map((subItem, index) => (
+                            <li
+                              key={index}
+                              className="navigation__submenu-item"
+                            >
+                              <a
+                                href={subItem.href}
+                                className="navigation__submenu-link ani-underline c-underline-primary t-body-small"
+                              >
+                                {subItem.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
-          {/* sub navigation menu */}
-          <div className="header--row-sub">
-            <nav aria-labelledby="" className="">
-              <p className="sr-only">
-                Expand sub navigation buttons to view related content groups and
-                associated links.
-              </p>
-              <ul className="header--menu-sub">
-                <li className="header--menu-sub-item">
-                  <a href="/" className="t-label">
-                    Locations & Hours
-                  </a>
-                  <input
-                    type="checkbox"
-                    id="sub-menu-item-1"
-                    className="menu-item-input"
-                    hidden
-                  ></input>
-                  <label htmlFor="sub-menu-item-1" className="menu-item-label">
-                    <span>
-                      <div className="i-chevron-down"></div>
-                    </span>
-                  </label>
-                  <div className="header--menu-sub-dropdown-container">
-                    <ul className="header--menu-sub-sub s-box-large-v s-box-large-h">
-                      <li>
-                        <a
-                          href="/"
-                          className="ani-underline c-underline-primary t-label"
+
+          {/* sec navigation */}
+          <div className="navigation__row-sec">
+            <nav
+              aria-label="Secondary navigation"
+              className="navigation__sec-menu"
+            >
+              <ul className="navigation__secmenu-list">
+                {secMenuItems.map((item) => (
+                  <li key={item.id} className="navigation__menu-item">
+                    <a href={item.href} className="navigation__menu-link">
+                      {item.title}
+                    </a>
+                    <button
+                      onClick={() => handleSubmenuClick(item.id)}
+                      className="navigation__submenu-button"
+                      aria-expanded={activeSubmenu === item.id}
+                      aria-controls={`submenu-${item.id}`}
+                    >
+                      <span className="i-chevron-down"></span>
+                    </button>
+                    <div
+                      className={`navigation__submenu ${isOpen ? "is-open" : ""}
+                      ${activeSubmenu === item.id ? "is-active" : ""}`}
+                      id={`submenu-${item.id}`}
+                    >
+                      <div className="navigation__submenu-header">
+                        <button
+                          onClick={handleBackClick}
+                          className="navigation__back-button"
                         >
-                          Sub Menu Item 1
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
+                          <span className="i-chevron-down"></span>
+                          <p className="t-label ani-underline c-underline-secondary">
+                            Back
+                          </p>
+                        </button>
+                      </div>
+                      <div className="navigation__submenu-content">
+                        <div className="navigation__submenu-title">
+                          <a href={item.href}>{item.title}</a>
+                        </div>
+
+                        <ul className="navigation__submenu-list">
+                          {item.subItems.map((subItem, index) => (
+                            <li
+                              key={index}
+                              className="navigation__submenu-item"
+                            >
+                              <a
+                                href={subItem.href}
+                                className="navigation__submenu-link ani-underline c-underline-primary t-body-small"
+                              >
+                                {subItem.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </nav>
+            <div className="navigation__site-search">
+              <a href={"/"} className="">
+                Search
+              </a>
+              <button className="navigation__site-search-button">
+                <span className="i-search"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

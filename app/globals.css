@@ -443,16 +443,25 @@ body {
 }
 
 .i-chevron-down {
-  width: 17px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.64841 4.6112L11.7512 1.52588e-05L15.2968 2.8372e-05L9.55456 6.75353L9.55721 6.75652L7.65237 9.00002L7.64841 8.99536L7.64446 9.00001L5.73961 6.75651L5.74226 6.75353L8.93275e-06 2.18221e-05L3.5456 2.18221e-05L7.64841 4.6112Z' fill='%23E21833'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
+  background-position-x: 4px;
+  background-position-y: 8px;
 }
 
 .i-menu-toggle {
   width: 20px;
   height: 19px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='19' viewBox='0 0 20 19' fill='none'%3E%3Cline y1='1.75' x2='20' y2='1.75' stroke='black' stroke-width='2.5'/%3E%3Cline y1='9.75' x2='20' y2='9.75' stroke='black' stroke-width='2.5'/%3E%3Cline x1='4' y1='17.75' x2='20' y2='17.75' stroke='black' stroke-width='2.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.i-search {
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5292 8.79804C16.5292 11.28 14.5172 13.2919 12.0353 13.2919C9.55337 13.2919 7.54138 11.28 7.54138 8.79804C7.54138 6.31612 9.55337 4.30414 12.0353 4.30414C14.5172 4.30414 16.5292 6.31612 16.5292 8.79804ZM18.9583 8.79804C18.9583 12.6215 15.8588 15.7211 12.0353 15.7211C10.6968 15.7211 9.44703 15.3412 8.38789 14.6835L5.04616 18.0252H1.04166L6.29677 12.672C5.54897 11.5664 5.11225 10.2332 5.11225 8.79804C5.11225 4.97455 8.2118 1.875 12.0353 1.875C15.8588 1.875 18.9583 4.97455 18.9583 8.79804Z' fill='%23242424'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
 }
 
@@ -528,7 +537,7 @@ body {
 }
 
 .s-stack-default {
-  margin-bottom: 1dvh;
+  margin-bottom: 1rem;
 }
 
 .s-stack-large {

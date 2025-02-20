@@ -1,0 +1,34 @@
+import {
+  Meta,
+  Canvas,
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  Controls,
+  Stories,
+  ArgTypes,
+  Source,
+} from "@storybook/blocks";
+
+import * as NavigationStories from "./Navigation.stories";
+
+<Meta of={NavigationStories} />
+
+<Title />
+<Subtitle />
+<Description />
+<Controls />
+
+### Note
+
+This is the custom navigation component for the Libraries. It removes the additional sidebar button on the left side of the logo to avoid user confusion (gratuitous redundancy). The sidebar-style menu only appears on small screens (width < 1240px).
+This header navigation only supports two levels of menu to simplify the user experience and prevent complicated navigation. While the main navigation links serve as regular links, the secondary navigation links are used as shortcuts to utilities.
+
+### To-do
+
+- Fix vertical overflow for small screen devices (mobile) when entering the second-level menu if the main menu is too long
+
+### Breakpoints
+
+- 1240px: The breakpoint for the sidebar-style menu to appear on small screens.
