@@ -427,6 +427,11 @@ body {
   fill: var(--dark-gray) !important;
 }
 
+.ani-icon-interactive:hover path#white,
+.ani-icon-interactive:focus path#white {
+  fill: var(--white) !important;
+}
+
 /* decoration */
 .d-underline {
   text-decoration: underline;

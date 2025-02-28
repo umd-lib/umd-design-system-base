@@ -79,6 +79,8 @@ footer li {
 .social-media-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 ul.social-media-list li {
