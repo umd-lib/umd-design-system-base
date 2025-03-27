@@ -1,0 +1,131 @@
+## Tab Component
+
+### Intro
+
+It is the tab component for UMD Libraries. It consists of three subcomponents to display the content in tabs.
+
+### Component Structure
+
+[embed kitchen sink component]
+
+There are three subcomponents to create a working tab component on the page:
+
+- Tabs
+- Tab Trigger
+- Tab
+
+The Tab Trigger and Tab should be placed under Tabs.
+
+- Tabs
+  - Slots - Tab Trigger
+  - Slots - Tab
+
+For each Tabs component, you can have as many Tab Triggers and Tabs as needed. It is suggested to have at least two Tab Triggers and Tabs, and no more than five Tab Triggers and Tabs.
+
+The way to connect Tab Trigger and Tab is to use the "tab_value". You should set the "tab_value" of the Tab Trigger and Tab to the same value to connect them. Although you can set the "tab_value" of several Tab Triggers to be the same to show the same Tab, this is not a recommended practice.
+
+### Text Fields
+
+#### Tabs
+
+<table>
+  <tr>
+    <td>Field</td>
+    <td>Requirement</td>
+    <td>Description</td>
+    <td>Note</td>
+  </tr>
+  <tr>
+    <td>Label</td>
+    <td>Optional</td>
+    <td>
+      An accessible label for the entire tab interface (for screen readers). It
+      will be hidden visually.
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Default Tab</td>
+    <td>Optional</td>
+    <td>Enter the "Tab Value" of the tab that should be active by default.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>ID</td>
+    <td>Optional</td>
+    <td>A unique identifier for this tab group.</td>
+    <td></td>
+  </tr>
+</table>
+
+#### Tab Trigger
+
+<table>
+  <tr>
+    <td>Field</td>
+    <td>Requirement</td>
+    <td>Description</td>
+    <td>Note</td>
+  </tr>
+  <tr>
+    <td>Tab Value</td>
+    <td>Required</td>
+    <td>Unique identifier for connecting this trigger to its tab content.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>First Tab in List</td>
+    <td>Optional</td>
+    <td>Whether this tab is the first tab in the list (for tabindex).</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tab Label</td>
+    <td>Required</td>
+    <td>Label displayed in the Tab Trigger.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tab Description</td>
+    <td>Optional</td>
+    <td>Additional description for screen readers.</td>
+    <td></td>
+  </tr>
+</table>
+
+#### Tab
+
+<table>
+  <tr>
+    <td>Field</td>
+    <td>Requirement</td>
+    <td>Description</td>
+    <td>Note</td>
+  </tr>
+  <tr>
+    <td>Tab Value</td>
+    <td>Required</td>
+    <td>Unique identifier for connecting this content to its Tab Trigger.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Auto Focus First Element</td>
+    <td>Optional</td>
+    <td>
+      Whether to automatically focus the first interactive element in the tab.
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tab Heading</td>
+    <td>Optional</td>
+    <td>Optional heading displayed at the top of tab content.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Body (WYSIWYG)</td>
+    <td>Required</td>
+    <td>Tab content.</td>
+    <td></td>
+  </tr>
+</table>
