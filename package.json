@@ -2,7 +2,7 @@
   "name": "umdds",
   "version": "1.0.0",
   "description": "UMD Design System Drupal Theme",
-  "main": "js/tmp.js",
+  "main": "js/design-system/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
