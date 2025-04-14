@@ -1,7 +1,7 @@
 import Navigation from "./Navigation";
 
 export default {
-  title: "Component/Navigation/Navigation",
+  title: "Component/Navigation",
   component: Navigation,
   parameters: {
     layout: "fullscreen",

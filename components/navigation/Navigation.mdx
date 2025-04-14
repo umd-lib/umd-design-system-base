@@ -20,15 +20,49 @@ import * as NavigationStories from "./Navigation.stories";
 <Description />
 <Controls />
 
-### Note
+---
 
-This is the custom navigation component for the Libraries. It removes the additional sidebar button on the left side of the logo to avoid user confusion (gratuitous redundancy). The sidebar-style menu only appears on small screens (width < 1240px).
-This header navigation only supports two levels of menu to simplify the user experience and prevent complicated navigation. While the main navigation links serve as regular links, the secondary navigation links are used as shortcuts to utilities.
+**Note: The Storybook demo component is only for reference. Please refer to the design file below as the final component design.**
 
-### To-do
+---
 
-- Fix vertical overflow for small screen devices (mobile) when entering the second-level menu if the main menu is too long
+## Design
+
+<iframe
+  width="100%"
+  height="600"
+  src="https://embed.figma.com/design/SE3TBfjjirxES6H9g2EyvS/UMD-Libraries-Design-System?node-id=1-100&embed-host=share"
+  allowfullscreen
+></iframe>
+
+## Intro
+
+This is the custom navigation component for the Libraries. It removes the additional sidebar button on the left side of the logo to avoid user confusion (gratuitous redundancy). The sidebar-style menu only appears on small screens (width < 1240px). This header navigation only supports two levels of menus to simplify the user experience and prevent complicated navigation. While the main navigation links serve as regular links, the utility navigation links are used as shortcuts to utilities.
+
+## Component Structure
+
+It consists of two navigation lists in the navigation component, including "Main Navigation" and "Utility Navigation."
+
+### Main Navigation
+
+Serves as the main navigation for the website. It should only include links within the website; functions should not be in this area.
+
+### Utility Navigation
+
+Serves as the sub-navigation to the main navigation. In addition to the sub-content, additional information should be placed here, such as system status, search, etc. There are two types of dropdowns that can be used here: the regular two-level link dropdown and the utility block content dropdown for further customization.
+
+When the navigation component is used in the sub-Libraries site, it should include a link back to the main website in the first position of the utility navigation.
+
+## Specifications
 
 ### Breakpoints
 
-- 1240px: The breakpoint for the sidebar-style menu to appear on small screens.
+- 1240px: The breakpoint for the sidebar-style menu to appear on small screens. This custom breakpoint is designed for the main Libraries' website to avoid the resposive design issue.
+
+### Logo
+
+The height of the logo is limited to 64px, with no limitation on the width. It should maintain the same aspect ratio as the logo design.
+
+## To-do
+
+- Fix vertical overflow for small screen devices (mobile) when entering the second-level menu if the main menu is too long.

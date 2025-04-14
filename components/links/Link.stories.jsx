@@ -1,7 +1,7 @@
 import Link from "./Link";
 
 export default {
-  title: "Component/Links/Link",
+  title: "Component/Link",
   component: Link,
   parameters: {
     layout: "centered",

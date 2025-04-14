@@ -18,38 +18,34 @@ import * as LinkStories from "./Link.stories";
 <Title />
 <Subtitle />
 <Description />
+
+---
+
+**Note: The Storybook demo component is only for reference. Please refer to the design file below as the final component design.**
+
+---
+
 <Primary />
 <Controls />
 
-### Overview
+## Overview
 
 Two primary link styles are used across the website:
 
 - Title Links
 - Body Links
 
-Other UI elements like CTAs, navigation items, and footer links use distinct styling patterns. Link styles are defined in global.css and applied directly without Single-Directory components. Body link styling is the default, while Title link styling activates when used within heading tags (`<h1>`, etc.).
+Other UI elements, such as CTAs, navigation items, and footer links, use distinct styling patterns. Link styles are defined in `global.css` and applied directly without Single-Directory components. Body link styling is the default, while Title link styling is activated when used within heading tags (`<h1>`, etc.).
 
-### Style Variations
+## Design
+
+<iframe
+  width="100%"
+  height="600"
+  src="https://embed.figma.com/design/SE3TBfjjirxES6H9g2EyvS/UMD-Libraries-Design-System?node-id=42-44&embed-host=share"
+  allowfullscreen
+></iframe>
+
+## Style Variations
 
 While the link types differ in color, text decoration, and animation, their typography is interchangeable. For example, Title links can use any heading typography style.
-
-### Twig Templates
-
-The examples below demonstrate how to apply specific link styles in different scenarios. The twig templates will not be included as a part of the component library.
-
-#### Body Link
-
-```twig
-<a href={{ url }} class="link--body c-content-interactive-secondary d-underline">
- {{ text }}
-</a>
-```
-
-#### Title Link
-
-```twig
-<h1>
-  <a href={{ url }} class="link--title c-content-primary c-underline-secondary ani-underline">{{ text }}</a>
-</h1>
-```
