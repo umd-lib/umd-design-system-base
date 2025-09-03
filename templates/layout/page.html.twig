@@ -44,31 +44,31 @@
 #}
 <div class="layout-container">
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    {% if page.highlighted %}
-      <div class="highlighted-ui">
-        {{ page.highlighted }}
-      </div>
-    {% endif %}
-
-    {% if page.header %}
-      <div class="layout-header">
-        {{ page.header }}
-      </div>
-    {% endif %}
-
-    <div class="layout-content">
-      {{ page.content }}
+  {% if page.highlighted %}
+    <div class="highlighted-ui">
+      {{ page.highlighted }}
     </div>
+  {% endif %}
 
-    {% if page.footer %}
-      <div class="layout-footer">
-        {{ page.footer }}
-      </div>
-    {% endif %}
+  {% if page.header %}
+    <div class="layout-header">
+      {{ page.header }}
+    </div>
+  {% endif %}
 
-  </main>
+  <div class="layout-content">
+    <main role="main">
+      {{ page.content }}
+    </main>
+  </div>
+
+  {% if page.footer %}
+    <div class="layout-footer">
+      {{ page.footer }}
+    </div>
+  {% endif %}
+
 
 </div>{# /.layout-container #}
